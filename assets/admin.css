@@ -1,0 +1,46 @@
+/* assets/admin.css */
+
+.em-date {
+	width: auto;
+	max-width: 150px;
+}
+
+#em_subject_marks_container h4 {
+	margin-top: 1.2em;
+	margin-bottom: 0.4em;
+	color: #2271b1;
+}
+
+#em_subject_marks_container p.description,
+#em_subject_marks_container p.error {
+	margin-top: 0.2em;
+	font-style: italic;
+	color: #666;
+}
+
+#em_subject_marks_container p.error {
+	color: #d63638;
+}
+
+.em-top-students ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.em-top-students li {
+	padding: 0.3em 0;
+	border-bottom: 1px solid #eee;
+}
+
+.em-top-students li:last-child {
+	border-bottom: none;
+}
+
+/* Optional: Responsive table for report */
+table.wp-list-table th,
+table.wp-list-table td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 150px;
+}
