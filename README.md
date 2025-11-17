@@ -13,7 +13,7 @@ This plugin implements a complete exam management system with custom post types 
 
 1. Download or clone this repository into your `wp-content/plugins/` directory:
    ```bash
-   git clone https://github.com/AliBoulahbal/mt-exam3.git
+   git clone https://github.com/AliBoulahbal/mt-exam.git
 
 2. In WordPress Admin → Plugins → Installed Plugins, activate Exam Management.
 3. Go to the new menu items:<br>
