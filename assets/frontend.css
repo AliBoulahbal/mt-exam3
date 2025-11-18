@@ -1,157 +1,147 @@
 /* =============================================================================
-   Exam Management – Frontend Styles for [em_top_students]
+   Exam Management – Simple & Responsive Top Students
    ============================================================================= */
 
 .em-top-students {
-  --em-primary: #2271b1;
-  --em-secondary: #0073aa;
-  --em-bg: #f8f9fa;
-  --em-border: #e2e4e7;
-  --em-success: #4caf50;
-  --em-text: #333;
-  --em-muted: #6c757d;
-
-  margin: 2.5rem 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 2rem 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
 }
 
-.em-top-students h3.em-term-title {
-  font-size: 1.4rem;
+.em-term-title {
+  font-size: 1.3rem;
   font-weight: 600;
-  color: var(--em-primary);
-  margin: 2rem 0 1rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--em-border);
+  color: #2271b1;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.em-top-students h3.em-term-title small {
+.em-term-title small {
   font-size: 0.85rem;
+  color: #777;
   font-weight: normal;
-  color: var(--em-muted);
   margin-left: 0.5rem;
 }
 
 .em-students-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.8rem;
-  counter-reset: em-student;
+  margin: 0;
+  counter-reset: rank;
 }
 
 .em-student {
   position: relative;
-  padding: 1rem 1rem 1rem 4rem;
-  margin-bottom: 0.75rem;
+  padding: 0.9rem 0.9rem 0.9rem 3.2rem;
+  margin-bottom: 0.8rem;
   background: #fff;
-  border: 1px solid var(--em-border);
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-.em-student:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  border-color: var(--em-primary);
-}
-
-/* Medal/Number badge */
+/* Rank badge */
 .em-student::before {
-  counter-increment: em-student;
-  content: counter(em-student);
+  counter-increment: rank;
+  content: counter(rank);
   position: absolute;
-  left: 1rem;
+  left: 0.9rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  background: var(--em-primary);
+  background: #2271b1;
   color: white;
+  font-size: 0.85rem;
   font-weight: bold;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  display: grid;
+  place-content: center;
 }
 
-.em-student:nth-child(1)::before {
-  background: #FFD700; /* Gold */
-  color: #333;
-  box-shadow: 0 0 0 2px #FFA500;
-}
-.em-student:nth-child(2)::before {
-  background: #C0C0C0; /* Silver */
-  color: #333;
-}
-.em-student:nth-child(3)::before {
-  background: #CD7F32; /* Bronze */
-  color: #fff;
-}
+/* Top 3 medals */
+.em-student:nth-child(1)::before { background: #FFD700; color: #333; }
+.em-student:nth-child(2)::before { background: #C0C0C0; color: #333; }
+.em-student:nth-child(3)::before { background: #CD7F32; color: #fff; }
 
 .em-student strong {
-  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--em-text);
-  display: inline-block;
-  margin-right: 0.5rem;
+  flex: 1;
 }
 
-.em-student .em-marks {
-  color: var(--em-muted);
-  font-size: 0.95rem;
-}
-
-.em-student .em-average {
-  background: var(--em-secondary);
-  color: white;
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
-  font-weight: 600;
+.em-marks {
+  color: #777;
   font-size: 0.9rem;
-  margin-left: 0.5rem;
+}
+
+.em-average {
+  background: #0073aa;
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .em-top-students-empty {
-  padding: 1.2rem;
-  background: var(--em-bg);
-  border-left: 4px solid var(--em-muted);
-  color: var(--em-muted);
+  padding: 1rem;
+  background: #f9f9f9;
+  color: #777;
   font-style: italic;
+  border-radius: 4px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ✅ Fully Responsive */
+@media (max-width: 576px) {
   .em-student {
-    padding-left: 2.8rem;
-    font-size: 0.95rem;
+    padding-left: 2.6rem;
+    font-size: 0.9rem;
   }
+  
   .em-student::before {
-    width: 2rem;
-    height: 2rem;
-    font-size: 0.85rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.8rem;
+    left: 0.7rem;
   }
+  
+  /* Stack items on small screens */
+  .em-student {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .em-student .em-marks,
   .em-student .em-average {
-    display: block;
-    margin: 0.4rem 0 0;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .em-student .em-average {
+    margin-top: 0.3rem;
+    display: inline-block;
   }
 }
 
-/* Dark mode support (if theme supports) */
+/* Dark mode (auto) */
 @media (prefers-color-scheme: dark) {
+  .em-top-students {
+    color: #e0e0e0;
+  }
   .em-student {
     background: #2d2d2d;
     border-color: #444;
-    color: #e0e0e0;
   }
-  .em-student strong {
-    color: #fff;
-  }
-  .em-student .em-marks {
+  .em-student strong { color: #fff; }
+  .em-marks { color: #aaa; }
+  .em-term-title { color: #61dafb; border-bottom-color: #444; }
+  .em-top-students-empty {
+    background: #2a2a2a;
     color: #aaa;
-  }
-  .em-top-students h3.em-term-title {
-    color: #61dafb;
   }
 }
