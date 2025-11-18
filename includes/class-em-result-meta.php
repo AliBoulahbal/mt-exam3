@@ -1,6 +1,6 @@
 <?php
 /**
- * Result Meta Box — Fully Compliant
+ * Result Meta Box
  *
  * @package Exam Management
  */
@@ -109,7 +109,7 @@ class EM_Result_Meta {
 				});
 			});
 
-			// Load subjects on edit (if exam already selected)
+			
 			if ($('#em_exam_id').val()) {
 				$('#em_exam_id').trigger('change');
 			}
@@ -168,7 +168,7 @@ class EM_Result_Meta {
 		}
 		update_post_meta( $post_id, 'em_subject_marks', wp_json_encode( $clean_marks ) );
 
-		// ✅ Generate clean, readable title
+		//  Generate clean, readable title
 		$title = 'Result';
 		if ( $student_id ) {
 			$student = get_post( $student_id );
